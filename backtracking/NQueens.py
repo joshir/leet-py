@@ -21,14 +21,14 @@ def solveQueens(n: int) -> List[List[int]]:
             else:
                 col.add(c)
                 posDiag.add(r + c)
-                posDiag.add(r - c)
+                negDiag.add(r - c)
                 board[r][c] = "Q"
 
                 backtrack(r + 1)
 
                 col.remove(c)
                 posDiag.remove(r + c)
-                posDiag.remove(r - c)
+                negDiag.remove(r - c)
                 board[r][c] = "."
 
     backtrack(0)
