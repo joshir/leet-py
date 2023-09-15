@@ -16,19 +16,18 @@ def letterCombos(digits: str) -> List[str]:
         "0": "",
     }
 
-    def backtrack(i = 0,cur = []):
+    def backtrack(i=0, cur=[]):
         if i == len(digits):
             res.append(cur[:])
             return
 
         for j in m[digits[i]]:
             cur.append(j)
-            backtrack(i+1, cur)
+            backtrack(i + 1, cur)
             cur.pop()
 
     digits and backtrack(0, [])
     return res
-
 
 
 if __name__ == '__main__':

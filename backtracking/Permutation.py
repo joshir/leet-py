@@ -13,8 +13,10 @@ def permutations(nums: List[int]) -> List[List[int]]:
                 perm.append(i)
                 backtrack(perm)
                 perm.pop()
+
     backtrack([])
     return res
+
 
 if __name__ == '__main__':
     print(permutations([1, 2, 3]))

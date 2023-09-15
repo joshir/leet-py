@@ -4,14 +4,14 @@ from typing import List
 def subset(nums: List[int]) -> List[List[int]]:
     res = []
 
-    def backtrack(i, subset):
+    def backtrack(i, s):
         if i == len(nums):
-            res.append(subset[:])
+            res.append(s[:])
             return
-        subset.append(nums[i])
-        backtrack(i + 1, subset)
-        subset.pop()
-        backtrack(i + 1, subset)
+        s.append(nums[i])
+        backtrack(i + 1, s)
+        s.pop()
+        backtrack(i + 1, s)
 
     backtrack(0, [])
     return res

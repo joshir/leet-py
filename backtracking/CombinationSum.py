@@ -1,7 +1,7 @@
 from typing import List
 
 
-def comboSum(candidates: List[int], target: int)->List[List[int]]:
+def comboSum(candidates: List[int], target: int) -> List[List[int]]:
     res = []
 
     def dfs(i, cur, total):
@@ -14,7 +14,7 @@ def comboSum(candidates: List[int], target: int)->List[List[int]]:
         cur.append(candidates[i])
         dfs(i, cur, total + candidates[i])
         cur.pop()
-        dfs(i+1, cur, total)
+        dfs(i + 1, cur, total)
 
     dfs(0, [], 0)
 
