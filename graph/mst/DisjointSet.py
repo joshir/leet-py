@@ -20,4 +20,4 @@ class DisjointSet:
             self.parent[u] = v
             self.rank[v] += 1
         else:
-            self.parent[u if self.rank[u] < self.frank[v] else v] = self.parent[v if self.rank[u] < self.frank[v] else u]
+            self.parent[u if self.rank[u] < self.frank[v] else v] = v if self.rank[u] < self.frank[v] else u
