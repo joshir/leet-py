@@ -22,3 +22,4 @@ class DisjointSet:
             self.rank[v] += 1
         else:
             self.parent[u if self.rank[u] < self.rank[v] else v] = v if self.rank[u] < self.rank[v] else u
+        return True
