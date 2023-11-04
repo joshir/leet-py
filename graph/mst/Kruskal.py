@@ -3,8 +3,7 @@ import heapq
 from graph.mst.DisjointSet import DisjointSet
 
 
-def minimumSpanningTree(edges, n):
-
+def minimumSpanningTree(edges, n: int):
     min_heap = []
     for s, d, w in edges:
         heapq.heappush(min_heap, [w, s, d])

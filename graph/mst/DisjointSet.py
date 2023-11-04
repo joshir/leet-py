@@ -1,8 +1,8 @@
 class DisjointSet:
 
-    def __int__(self, size: int):
-        self.size, self.rank, self.parent = size, [], []
-        for i in range(size + 1):
+    def __int__(self, n):
+        self.rank, self.parent = [], []
+        for i in range(n + 1):
             self.rank[i] = 0
             self.parent[i] = i
 
