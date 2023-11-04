@@ -12,11 +12,13 @@ def bruteforce(capacity, weights, profits):
 
 
 def memoized(capacity, weights, profits):
-    memo = []
+    memo = [[-1] * (capacity+1) for _ in range(len(weights))]
 
     def dfs(index, capacity):
         if index == len(weights):
             return 0
+        if -1 != memo[index][capacity]:
+            return memo[index][capacity] # you missed the whole point of this
         memo[index][capacity] = dfs(index + 1, capacity)
         if weights[index] <= capacity:
             choose = profits[index] + dfs(index + 1, capacity - weights[index])
